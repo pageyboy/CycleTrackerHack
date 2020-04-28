@@ -6,13 +6,18 @@ bool sensorFound = false;
 float totalMileage = 0;
 long rotations = 0;
 const int buttonPin = 2;
-const int ledPin =  13; 
+const int ledPin =  13;
+const int timeSinceStartSeconds = 0; 
 
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(38400);
   lcd.begin(84, 48);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Chris's Trip Computer");
+  delay(2000);
 }
 
 // the loop routine runs over and over again forever:
